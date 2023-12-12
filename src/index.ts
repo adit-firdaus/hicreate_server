@@ -1,12 +1,7 @@
-import http from 'http';
 import app from './app';
 
-import api from './api';
+const PORT = app.env["PORT"] || 3000;
 
-app.use(api.routes());
-
-const server = http.createServer(app.callback());
-
-server.listen(3000, () => {
-    console.log('Server running on port http://localhost:3000');
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });

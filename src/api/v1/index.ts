@@ -1,11 +1,9 @@
 import Router from "koa-router";
 
-const router = new Router({
-  prefix: '/v1'
-});
+import assetRouter from "./routes/assets.route";
 
-router.get('/', async ctx => {
-  ctx.body = 'v1';
-});
+const router = new Router();
+
+router.use("/assets", assetRouter.routes());
 
 export default router;
